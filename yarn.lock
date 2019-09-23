@@ -2,6 +2,33 @@
 # yarn lockfile v1
 
 
+"@clappr/core@^0.3.13":
+  version "0.3.13"
+  resolved "https://registry.yarnpkg.com/@clappr/core/-/core-0.3.13.tgz#5e984a4f21a21caf0c75e4dd18a098f4e576854b"
+  integrity sha512-6fCivyQnt5RNxKtV6dRqF22WhXsWiYvVKHpNkM8wKugB8C3zWk3TTyrKds2M7LAlTP28hoICZsKsHOAILK+Mpw==
+
+"@clappr/flash-playback@^0.3.8":
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/@clappr/flash-playback/-/flash-playback-0.3.8.tgz#b345db593209e5cb2c49f023f732f041db3cc9fe"
+  integrity sha512-OjsZ8o21aMXO6k1aoBp/EtU4AELPYAHO9Ccb5dhU+p+KPKsnb2w+xuSIcyNmrxCIYgjair6ZJk9Zf2hPgQbqyA==
+
+"@clappr/flashls-playback@^0.3.7":
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/@clappr/flashls-playback/-/flashls-playback-0.3.7.tgz#4a85fd68a506f0ddc65a5077c843ea54c0560834"
+  integrity sha512-2jRKIy4isGrbNN1p7hrKLS2Gv7CBccAnavONVD0JCvYCWkwFwjeKLE4x8W5XAOAXeSR71QLX34UorLIWNFi8JA==
+  dependencies:
+    "@clappr/flash-playback" "^0.3.8"
+
+"@clappr/hlsjs-playback@^0.3.9":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/@clappr/hlsjs-playback/-/hlsjs-playback-0.3.9.tgz#62f61ee49533163b25f1429bf2cf70720800c788"
+  integrity sha512-AbFWlxvndD6FgvNEDfN+shfmoBP5dNj6FG/PdWlOJVWhw16wMfcIjQtGx0t83ZTjaFgAUoBi+EtaBjJJQ5lG9g==
+
+"@clappr/plugins@^0.3.10":
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/@clappr/plugins/-/plugins-0.3.10.tgz#f6ce40265dfc432c377bb6932e793d6849d200f3"
+  integrity sha512-aonFyhvaKOU30ExKXKjad+EHlGSyijxzSowx4CnLBd7gScAC21R+wURRXWWuhAmXf3jnCal20AodsfxTRfic6w==
+
 "@sinonjs/formatio@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@sinonjs/formatio/-/formatio-2.0.0.tgz#84db7e9eb5531df18a8c5e0bfb6e449e55e654b2"
@@ -5187,10 +5214,10 @@ hipchat-notifier@^1.1.0:
     lodash "^4.0.0"
     request "^2.0.0"
 
-hls.js@0.12.2:
-  version "0.12.2"
-  resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-0.12.2.tgz#64a969a78cc25991ed5de19357b1dc3f178ac23b"
-  integrity sha512-lQBSXggw9OzEuaUllUBoSxPcf7neFgnEiDRfCdCNdIPtUeV7vXZ0OeASx6EWtZTBiqSSPigoOX1Y+AR5dA1Feg==
+hls.js@^0.12.4:
+  version "0.12.4"
+  resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-0.12.4.tgz#c155b7b2825a11117c111b781973c0ffa759006b"
+  integrity sha512-e8OPxQ60dBVsdkv4atdxR21KzC1mgwspM41qpozpj3Uv1Fz4CaeQy3FWoaV2O+QKKbNRvV5hW+/LipCWdrwnMQ==
   dependencies:
     eventemitter3 "3.1.0"
     url-toolkit "^2.1.6"
