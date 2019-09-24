@@ -27,11 +27,11 @@ let configurations = []
 configurations.push(webpackConfig({
   filename: 'clappr.js',
   plugins: analyzeBundle ? [ new BundleAnalyzerPlugin(), defaultDefinitionPlugin ] : [defaultDefinitionPlugin],
-  mode: 'development'
 }))
 
 if (!analyzeBundle) {
   configurations.push(webpackConfig({
+    entry: path.resolve(__dirname, 'src/base_bundle.js'),
     filename: 'clappr.plainhtml5.js',
     plugins: plainHtml5Plugins,
     mode: 'production'
@@ -70,6 +70,7 @@ if (minimize) {
 
   console.log('NOTE: Building flavor plainhtml5 with only plain HTML5 playback plugins, but will result in smaller build size')
   configurations.push(webpackConfig({
+    entry: path.resolve(__dirname, 'src/base_bundle.js'),
     filename: 'clappr.plainhtml5.min.js',
     plugins: [
       loaderOptions,
@@ -93,7 +94,6 @@ if (forceInlineDebug) {
       loaderOptions,
       defaultDefinitionPlugin
     ],
-    mode: 'development'
   }))
 }
 
