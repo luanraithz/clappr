@@ -6,17 +6,12 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const webpackConfig = require('./webpack.config.base')
-const voidModulePath = path.resolve('./src/base/void')
 
 const minimize = !!process.env.MINIMIZE
 const analyzeBundle = !!process.env.ANALYZE_BUNDLE
 const forceInlineDebug = !!process.env.CLAPPR_INLINE_DEBUG
 
 const plainHtml5Plugins = [
-  new webpack.NormalModuleReplacementPlugin(/playbacks\/flash/, voidModulePath),
-  new webpack.NormalModuleReplacementPlugin(/playbacks\/base_flash_playback/, voidModulePath),
-  new webpack.NormalModuleReplacementPlugin(/playbacks\/flashls/, voidModulePath),
-  new webpack.NormalModuleReplacementPlugin(/playbacks\/hls/, voidModulePath),
   new webpack.DefinePlugin({ PLAIN_HTML5_ONLY: true }),
 ]
 
