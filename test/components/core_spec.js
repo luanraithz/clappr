@@ -133,10 +133,6 @@ describe('Core', function() {
         fakeContainer1.setAttribute('id', 'fakeContainer1')
         newInstance.el = fakeContainer1
 
-        const coreContainer = document.createElement('div')
-        coreContainer.setAttribute('id', 'coreContainer')
-        this.core.el = coreContainer 
-
         expect(this.core.isFullscreen()).to.equal(false)
         expect(newInstance.isFullscreen()).to.equal(false)
 
