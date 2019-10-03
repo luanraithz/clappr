@@ -63,6 +63,12 @@ export const Fullscreen = {
       document.msFullscreenElement
     )
   },
+  getFullscreenElement: function() {
+    return document.webkitFullscreenElement ||
+      document.webkitIsFullScreen ||
+      document.mozFullScreen ||
+      document.msFullscreenElement
+  },
   requestFullscreen: function(el) {
     if (el.requestFullscreen)
       el.requestFullscreen()
