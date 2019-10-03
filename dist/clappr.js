@@ -26339,6 +26339,9 @@ var Fullscreen = exports.Fullscreen = {
   isFullscreen: function isFullscreen() {
     return !!(document.webkitFullscreenElement || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement);
   },
+  getFullscreenElement: function getFullscreenElement() {
+    return document.webkitFullscreenElement || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement;
+  },
   requestFullscreen: function requestFullscreen(el) {
     if (el.requestFullscreen) el.requestFullscreen();else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();else if (el.mozRequestFullScreen) el.mozRequestFullScreen();else if (el.msRequestFullscreen) el.msRequestFullscreen();else if (el.querySelector && el.querySelector('video') && el.querySelector('video').webkitEnterFullScreen) el.querySelector('video').webkitEnterFullScreen();else if (el.webkitEnterFullScreen) el.webkitEnterFullScreen();
   },
@@ -28511,13 +28514,19 @@ var Core = function (_UIObject) {
     return this.activeContainer && this.activeContainer.getPlaybackType();
   };
 
+  Core.prototype.isFullscreen = function isFullscreen() {
+    return _utils.Fullscreen.getFullscreenElement() === (_browser2.default.isiOS ? this.activeContainer.el : this.el);
+  };
+
   Core.prototype.toggleFullscreen = function toggleFullscreen() {
-    if (!_utils.Fullscreen.isFullscreen()) {
-      _utils.Fullscreen.requestFullscreen(_browser2.default.isiOS ? this.activeContainer.el : this.el);
-      !_browser2.default.isiOS && this.$el.addClass('fullscreen');
-    } else {
+    console.log(this.isFullscreen());
+    if (this.isFullscreen()) {
       _utils.Fullscreen.cancelFullscreen();
       !_browser2.default.isiOS && this.$el.removeClass('fullscreen nocursor');
+    } else {
+      var el = _browser2.default.isiOS ? this.activeContainer.el : this.el;
+      _utils.Fullscreen.requestFullscreen(el);
+      !_browser2.default.isiOS && this.$el.addClass('fullscreen');
     }
   };
 

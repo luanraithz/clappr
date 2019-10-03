@@ -313,7 +313,6 @@ export default class Core extends UIObject {
   }
 
   toggleFullscreen() {
-    console.log(this.isFullscreen())
     if (this.isFullscreen()) {
       Fullscreen.cancelFullscreen()
       !Browser.isiOS && this.$el.removeClass('fullscreen nocursor')
