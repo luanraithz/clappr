@@ -316,9 +316,8 @@ export default class Core extends UIObject {
     if (this.isFullscreen()) {
       Fullscreen.cancelFullscreen()
       !Browser.isiOS && this.$el.removeClass('fullscreen nocursor')
-    } else {
-      const el = Browser.isiOS ? this.activeContainer.el : this.el
-      Fullscreen.requestFullscreen(el)
+    } else if (!Fullscreen.getFullscreenElement()) {
+      Fullscreen.requestFullscreen(Browser.isiOS ? this.activeContainer.el : this.el)
       !Browser.isiOS && this.$el.addClass('fullscreen')
     }
   }
