@@ -81,7 +81,6 @@ describe('Core', function() {
 
           this.core.toggleFullscreen()
           expect(spy).to.have.been.calledWith('fullscreen')
-
         })
       })
 
@@ -97,7 +96,6 @@ describe('Core', function() {
           expect(fullScreenSpy).to.have.been.calledWith(this.core.activeContainer.el)
         })
       })
-
     })
 
     describe('when is in fullscreen', () => {
@@ -109,7 +107,6 @@ describe('Core', function() {
 
         this.core.toggleFullscreen()
         expect(spy).to.have.been.called
-        
       })
 
       describe('Browser.isiOS', () => {
@@ -139,7 +136,6 @@ describe('Core', function() {
         sinon.stub(Fullscreen, 'getFullscreenElement').returns(fakeContainer1)
         expect(this.core.isFullscreen()).to.equal(false)
         expect(newInstance.isFullscreen()).to.equal(true)
-
       })
     })
   })
