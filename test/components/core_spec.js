@@ -55,7 +55,6 @@ describe('Core', function() {
       let fullScreenSpy
 
       beforeEach(() => {
-        sinon.stub(Fullscreen, 'isFullscreen').value(() => false)
         fullScreenSpy = sinon.spy(Fullscreen, 'requestFullscreen')
       })
 
@@ -121,7 +120,6 @@ describe('Core', function() {
           expect(spy).to.have.been.calledWith('fullscreen nocursor')
         })
       })
-
     })
     describe('Multiple instances', () => {
       it('shouldn\'t toggle one instance fullscreen state when another one stops', () => {

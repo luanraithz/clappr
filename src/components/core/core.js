@@ -142,7 +142,7 @@ export default class Core extends UIObject {
   }
 
   updateSize() {
-    Fullscreen.isFullscreen() ? this.setFullscreen() : this.setPlayerSize()
+    this.isFullscreen() ? this.setFullscreen() : this.setPlayerSize()
   }
 
   setFullscreen() {
@@ -240,7 +240,7 @@ export default class Core extends UIObject {
   }
 
   handleFullscreenChange() {
-    this.trigger(Events.CORE_FULLSCREEN, Fullscreen.isFullscreen())
+    this.trigger(Events.CORE_FULLSCREEN, this.isFullscreen())
     this.updateSize()
   }
 
@@ -316,7 +316,7 @@ export default class Core extends UIObject {
     if (this.isFullscreen()) {
       Fullscreen.cancelFullscreen()
       !Browser.isiOS && this.$el.removeClass('fullscreen nocursor')
-    } else if (!Fullscreen.getFullscreenElement()) {
+    } else {
       Fullscreen.requestFullscreen(Browser.isiOS ? this.activeContainer.el : this.el)
       !Browser.isiOS && this.$el.addClass('fullscreen')
     }
